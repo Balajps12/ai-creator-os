@@ -1,0 +1,16 @@
+{
+  "name": "ai-creator-os",
+  "version": "1.0.0",
+  "description": "AI Creator Operating System",
+  "main": "dashboard-server.js",
+  "scripts": {
+    "start": "node dashboard-server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "fs-extra": "^11.3.0",
+    "openai": "^5.8.2"
+  }
+}
