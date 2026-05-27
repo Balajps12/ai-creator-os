@@ -106,6 +106,34 @@ app.post(
 
 app.get(
 
+  "/generate",
+
+  async (req, res) => {
+
+    try {
+
+      await runPipeline(
+
+        "AI startup growth"
+      );
+
+      res.send(
+        "✅ AI pipeline completed"
+      );
+
+    } catch (error) {
+
+      console.log(error);
+
+      res.send(
+        "❌ Pipeline failed"
+      );
+    }
+  }
+);
+
+app.get(
+
   "/api/dashboard",
 
   async (req, res) => {
@@ -263,6 +291,25 @@ background: #1e293b;
 border-radius: 10px;
 }
 
+.button {
+
+display: inline-block;
+
+padding: 12px 18px;
+
+background: #38bdf8;
+
+color: black;
+
+font-weight: bold;
+
+border-radius: 10px;
+
+text-decoration: none;
+
+margin-top: 15px;
+}
+
 </style>
 
 </head>
@@ -282,6 +329,17 @@ Autonomous AI Media Infrastructure
 <span class="badge">
 SYSTEM ACTIVE
 </span>
+
+<br>
+
+<a
+class="button"
+href="/generate"
+>
+
+Generate AI Content
+
+</a>
 
 </div>
 
@@ -474,7 +532,7 @@ app.listen(
   () => {
 
     console.log(
-      `🚀 Dashboard running at http://localhost:${PORT}`
+      `🚀 Dashboard running on port ${PORT}`
     );
   }
 );
